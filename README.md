@@ -1,5 +1,7 @@
 # ShopChrem
 
+[![CI](https://github.com/grtc97/webmcp-demo-store/actions/workflows/ci.yml/badge.svg)](https://github.com/grtc97/webmcp-demo-store/actions/workflows/ci.yml)
+
 A demo online store that shows how a normal website can be made usable by AI agents. The same shop logic is exposed three ways: **WebMCP** tools registered by the web page, an **MCP server** with an in-chat **MCP App** UI, and an **AEO** (Answer Engine Optimization) lesson about product data quality.
 
 There is no database, no REST API, no payment service and no API keys. The whole shop is one JSON document seeded from `shared/products.json`. In the browser it lives in `localStorage`; in the Node server it lives in memory.
@@ -98,6 +100,10 @@ await storefrontTools.search_products({ query: 'headphones' })
 ```
 
 Plain Chrome needs the `chrome://flags/#enable-webmcp-testing` flag and a relaunch. Availability in other browsers and chat products changes over time, so check the vendor's current documentation.
+
+## Continuous integration
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `main` and on pull requests. It installs dependencies with `npm ci`, then checks formatting, runs the tests and builds both apps, and confirms the MCP App is a single file. Run the same checks locally with `npm run format:check`, `npm test` and `npm run build`.
 
 ## Deployment
 
