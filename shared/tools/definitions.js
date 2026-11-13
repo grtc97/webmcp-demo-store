@@ -6,7 +6,7 @@ export const toolDefinitions = {
         mcp: {
             title: 'Search products',
             description:
-                'Search the ShopChrem demo store catalog. Returns products with variants, price (INR), quantity and stock status. The query matches name, category, description, specs, FAQ and variant labels or SKUs. All filters are optional.',
+                'Search the ShopChrem demo store catalog. Returns a page of products (default 10, max 50) with variants, price (INR), quantity and stock status, plus total, offset, limit and has_more. When has_more is true, call again with a larger offset to see the next page. The query matches name, category, description, specs, FAQ and variant labels or SKUs. All filters are optional.',
             readOnly: true,
             schema: ({ z }) => ({
                 query: z.string().optional().describe('Free text, e.g. "wireless headphones" or "40 hour battery"'),
@@ -18,11 +18,13 @@ export const toolDefinitions = {
                 min_price: z.number().nonnegative().optional().describe('Minimum price in INR'),
                 max_price: z.number().nonnegative().optional().describe('Maximum price in INR'),
                 sort: z.enum(['relevance', 'price_asc', 'price_desc', 'name']).optional(),
+                limit: z.number().int().min(1).max(50).optional().describe('Products per page (default 10, max 50)'),
+                offset: z.number().int().min(0).optional().describe('How many matching products to skip, for paging (default 0)'),
             }),
         },
         web: {
             description:
-                'Search the ShopChrem catalog. Returns products with variants, price, quantity and stock status (in_stock, low_stock, out_of_stock). All filters are optional.',
+                'Search the ShopChrem catalog. Returns a page of products (default 10, max 50) with variants, price, quantity and stock status (in_stock, low_stock, out_of_stock), plus total, offset, limit and has_more. When has_more is true, call again with a larger offset. All filters are optional.',
             readOnly: true,
             properties: {
                 query: {
@@ -48,6 +50,14 @@ export const toolDefinitions = {
                 sort: {
                     type: 'string',
                     enum: ['relevance', 'price_asc', 'price_desc', 'name'],
+                },
+                limit: {
+                    type: 'integer',
+                    description: 'Products per page (default 10, max 50)',
+                },
+                offset: {
+                    type: 'integer',
+                    description: 'How many matching products to skip, for paging (default 0)',
                 },
             },
         },

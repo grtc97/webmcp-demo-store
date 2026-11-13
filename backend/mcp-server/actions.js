@@ -21,9 +21,8 @@ export function createActions(store = createDemoStore()) {
     const handlers = createToolHandlers(store)
 
     async function createSnapshot(view, extra = {}) {
-        const [products, cart, wishlist] = await Promise.all([handlers.search_products({}), handlers.get_cart(), handlers.get_wishlist()])
-        const categories = [...new Set(products.map((product) => product.category))]
-        return { view, categories, cart, wishlist, ...extra }
+        const [cart, wishlist] = await Promise.all([handlers.get_cart(), handlers.get_wishlist()])
+        return { view, categories: store.categories(), cart, wishlist, ...extra }
     }
 
     function createCartAction(handlerName) {
@@ -42,9 +41,9 @@ export function createActions(store = createDemoStore()) {
 
     return {
         async search_products(args = {}) {
-            const products = await handlers.search_products(args)
+            const { products, ...page } = await handlers.search_products(args)
             const { query = '', category = '', status = '', min_price = '', max_price = '', sort = 'relevance' } = args
-            return createSnapshot('catalog', { products, filters: { query, category, status, min_price, max_price, sort } })
+            return createSnapshot('catalog', { products, page, filters: { query, category, status, min_price, max_price, sort } })
         },
 
         async get_product(args) {

@@ -3,7 +3,7 @@
 // (src/webmcp/webTools.js for the website, mcp-server/actions.js for MCP).
 export function createToolHandlers(store) {
     return {
-        search_products: (filters) => store.search(filters),
+        search_products: (filters) => store.searchPage(filters),
         get_product: ({ product_id }) => store.getProduct(product_id),
         check_availability: ({ variant_id }) => store.getVariant(variant_id),
         get_wishlist: () => store.getWishlist(),

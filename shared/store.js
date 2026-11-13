@@ -9,6 +9,8 @@ const MAX_CART_QUANTITY = 1000
 const REQUIRED_CUSTOMER_FIELDS = ['name', 'email', 'phone', 'address', 'city', 'postal_code']
 
 export const LOW_STOCK_AT = 5
+export const DEFAULT_SEARCH_LIMIT = 10
+export const MAX_SEARCH_LIMIT = 50
 
 function deepClone(value) {
     return JSON.parse(JSON.stringify(value))
@@ -47,8 +49,8 @@ function getProductImages(product) {
     return product.image ? [product.image] : []
 }
 
-function isBlankPrice(price) {
-    return price == null || price === ''
+function isBlank(value) {
+    return value == null || value === ''
 }
 
 function buildSearchText(product) {
@@ -200,10 +202,10 @@ export function createStore(storage) {
                 if (status && !product.variants.some((variant) => variant.status === status)) {
                     return false
                 }
-                if (!isBlankPrice(min_price) && !product.variants.some((variant) => variant.price >= Number(min_price))) {
+                if (!isBlank(min_price) && !product.variants.some((variant) => variant.price >= Number(min_price))) {
                     return false
                 }
-                if (!isBlankPrice(max_price) && !product.variants.some((variant) => variant.price <= Number(max_price))) {
+                if (!isBlank(max_price) && !product.variants.some((variant) => variant.price <= Number(max_price))) {
                     return false
                 }
                 return true
@@ -217,6 +219,28 @@ export function createStore(storage) {
             products.sort((first, second) => first.name.localeCompare(second.name))
         }
         return products
+    }
+
+    // Same filters as search(), plus paging. Used by the agent tools so one call stays small.
+    function searchPage({ limit, offset, ...filters } = {}) {
+        const pageLimit = isBlank(limit) ? DEFAULT_SEARCH_LIMIT : toInteger(limit, 'limit')
+        const pageOffset = isBlank(offset) ? 0 : toInteger(offset, 'offset')
+        if (pageLimit < 1 || pageLimit > MAX_SEARCH_LIMIT) {
+            throw new Error(`limit must be between 1 and ${MAX_SEARCH_LIMIT}`)
+        }
+        if (pageOffset < 0) {
+            throw new Error('offset must be 0 or more')
+        }
+
+        const matches = search(filters)
+        const products = matches.slice(pageOffset, pageOffset + pageLimit)
+        return {
+            products,
+            total: matches.length,
+            offset: pageOffset,
+            limit: pageLimit,
+            has_more: pageOffset + products.length < matches.length,
+        }
     }
 
     function getProduct(productId) {
@@ -383,6 +407,7 @@ export function createStore(storage) {
         notify,
         categories,
         search,
+        searchPage,
         getProduct,
         getVariant,
         getWishlist,

@@ -1,19 +1,46 @@
 import { EmptyState } from '@storefront/components/EmptyState'
-import { STOCK_STATUS_LABELS, STOCK_STATUS_TONES, formatMoney, pluralize } from '@storefront/utils/format'
+import { STOCK_STATUS_LABELS, STOCK_STATUS_TONES, formatMoney } from '@storefront/utils/format'
 import { Badge, Card, CardGrid, SectionHeader } from '@storefront/widgets'
 
 import { FilterForm } from '../components/FilterForm'
 import { ToolButton } from '../components/ToolButton'
+import { buildPageArgs } from '../utils/searchArgs'
 
 const EMPTY_FILTERS = { query: '', category: '', status: '', min_price: '', max_price: '', sort: 'relevance' }
 
+function describeRange(page, shownCount) {
+    if (page.total === 0) {
+        return '0 products'
+    }
+    return `Showing ${page.offset + 1}–${page.offset + shownCount} of ${page.total} products`
+}
+
+function Pager({ filters, page }) {
+    const previousArgs = buildPageArgs(filters, page, -1)
+    const nextArgs = buildPageArgs(filters, page, 1)
+    if (!previousArgs && !nextArgs) {
+        return null
+    }
+    return (
+        <div className="app-actions">
+            <ToolButton tool="search_products" args={previousArgs} disabled={!previousArgs}>
+                Previous
+            </ToolButton>
+            <ToolButton tool="search_products" args={nextArgs} disabled={!nextArgs}>
+                Next
+            </ToolButton>
+        </div>
+    )
+}
+
 export function CatalogPage({ snapshot }) {
-    const { products, categories } = snapshot
+    const { products, categories, page } = snapshot
+    const filters = { ...EMPTY_FILTERS, ...snapshot.filters }
 
     return (
         <>
-            <FilterForm filters={{ ...EMPTY_FILTERS, ...snapshot.filters }} categories={categories} />
-            <SectionHeader title={pluralize(products.length, 'product')} />
+            <FilterForm filters={filters} categories={categories} />
+            <SectionHeader title={describeRange(page, products.length)} />
             {products.length === 0 ? (
                 <EmptyState>No products match these filters.</EmptyState>
             ) : (
@@ -35,6 +62,7 @@ export function CatalogPage({ snapshot }) {
                     ))}
                 </CardGrid>
             )}
+            <Pager filters={filters} page={page} />
         </>
     )
 }

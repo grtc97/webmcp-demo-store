@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { STOCK_STATUS_LABELS } from '@storefront/utils/format'
 
 import { useRun } from '../hooks/useStore'
+import { buildSearchArgs } from '../utils/searchArgs'
 
 const STATUS_OPTIONS = [['', 'Any availability'], ...Object.entries(STOCK_STATUS_LABELS)]
 const SORT_OPTIONS = [
@@ -11,21 +12,6 @@ const SORT_OPTIONS = [
     ['price_desc', 'Price: high to low'],
     ['name', 'Name'],
 ]
-const PRICE_KEYS = ['min_price', 'max_price']
-
-// Only the filters the user actually set are sent to the tool.
-function buildSearchArgs(filters) {
-    const args = Object.fromEntries(
-        Object.entries(filters).filter(([key, value]) => value !== '' && !(key === 'sort' && value === 'relevance')),
-    )
-    for (const key of PRICE_KEYS) {
-        if (key in args) {
-            args[key] = Number(args[key])
-        }
-    }
-    return args
-}
-
 export function FilterForm({ filters, categories }) {
     const { run, busy } = useRun()
     const [form, setForm] = useState(filters)

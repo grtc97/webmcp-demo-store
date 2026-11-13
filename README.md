@@ -48,7 +48,7 @@ Project layout:
 
 ## Tools
 
-- Discover: `search_products`, `get_product`, `check_availability`
+- Discover: `search_products` (returns one page of up to 10 products by default, max 50, with `total` and `has_more`; use `limit` and `offset` to page), `get_product`, `check_availability`
 - Wishlist: `get_wishlist`, `add_to_wishlist`, `remove_from_wishlist`
 - Cart: `get_cart`, `add_to_cart`, `set_cart_quantity`, `remove_from_cart`
 - Buy: `place_order`, `get_orders`

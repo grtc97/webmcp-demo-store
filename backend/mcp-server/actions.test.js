@@ -29,6 +29,25 @@ describe('MCP actions', () => {
         assert.deepEqual(snapshot.wishlist, [])
     })
 
+    it('limits catalog snapshots to one page and describes it', async () => {
+        const first = (await toolResult(actions, 'search_products', {})).structuredContent
+        assert.equal(first.products.length, 10)
+        assert.deepEqual(first.page, { total: 29, offset: 0, limit: 10, has_more: true })
+        assert.equal(first.categories.length, 9)
+
+        const last = (await toolResult(actions, 'search_products', { offset: 20 })).structuredContent
+        assert.equal(last.products.length, 9)
+        assert.equal(last.page.has_more, false)
+    })
+
+    it('keeps full category and cart data on pages that are not the catalog', async () => {
+        const cart = (await toolResult(actions, 'get_cart')).structuredContent
+        assert.equal(cart.categories.length, 9)
+        const bad = await toolResult(actions, 'search_products', { limit: 500 })
+        assert.equal(bad.isError, true)
+        assert.match(bad.content[0].text, /limit must be between 1 and 50/)
+    })
+
     it('returns an error result instead of throwing', async () => {
         const unknownTool = await toolResult(actions, 'nope')
         assert.equal(unknownTool.isError, true)

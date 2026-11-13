@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { beforeEach, describe, it } from 'node:test'
 
-import { LOW_STOCK_AT, createStore } from './store.js'
+import { DEFAULT_SEARCH_LIMIT, LOW_STOCK_AT, MAX_SEARCH_LIMIT, createStore } from './store.js'
 
 const CUSTOMER = {
     name: 'Asha Rao',
@@ -66,6 +66,60 @@ describe('store', () => {
 
         it('returns nothing for a query that matches no product', () => {
             assert.deepEqual(store.search({ query: 'zzzz-no-such-thing' }), [])
+        })
+    })
+
+    describe('searchPage', () => {
+        it('returns the first 10 products by default with paging info', () => {
+            const page = store.searchPage()
+            assert.equal(DEFAULT_SEARCH_LIMIT, 10)
+            assert.equal(page.products.length, 10)
+            assert.deepEqual([page.total, page.offset, page.limit, page.has_more], [29, 0, 10, true])
+        })
+
+        it('walks through every product exactly once with offset', () => {
+            const ids = []
+            let offset = 0
+            for (let guard = 0; guard < 10; guard++) {
+                const page = store.searchPage({ offset })
+                ids.push(...page.products.map((product) => product.id))
+                if (!page.has_more) {
+                    break
+                }
+                offset += page.limit
+            }
+            assert.deepEqual(
+                ids,
+                store.search().map((product) => product.id),
+            )
+        })
+
+        it('reports has_more false on the last page and an empty page past the end', () => {
+            assert.equal(store.searchPage({ offset: 20 }).has_more, false)
+            assert.equal(store.searchPage({ offset: 20 }).products.length, 9)
+            const beyond = store.searchPage({ offset: 100 })
+            assert.deepEqual([beyond.products.length, beyond.total, beyond.has_more], [0, 29, false])
+        })
+
+        it('applies filters before paging', () => {
+            const page = store.searchPage({ category: 'Apparel', limit: 2 })
+            assert.equal(page.total, 5)
+            assert.equal(page.products.length, 2)
+            assert.equal(page.has_more, true)
+        })
+
+        it('accepts the maximum limit and rejects values outside the range', () => {
+            assert.equal(MAX_SEARCH_LIMIT, 50)
+            assert.equal(store.searchPage({ limit: 50 }).products.length, 29)
+            assert.throws(() => store.searchPage({ limit: 0 }), /limit must be between 1 and 50/)
+            assert.throws(() => store.searchPage({ limit: 51 }), /limit must be between 1 and 50/)
+            assert.throws(() => store.searchPage({ offset: -1 }), /offset must be 0 or more/)
+            assert.throws(() => store.searchPage({ limit: 'many' }), /limit must be an integer/)
+        })
+
+        it('treats empty strings from forms as not set', () => {
+            const page = store.searchPage({ limit: '', offset: '', query: '' })
+            assert.deepEqual([page.limit, page.offset], [10, 0])
         })
     })
 
