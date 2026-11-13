@@ -1,0 +1,40 @@
+import { EmptyState } from '@storefront/components/EmptyState'
+import { STOCK_STATUS_LABELS, STOCK_STATUS_TONES, formatMoney, pluralize } from '@storefront/utils/format'
+import { Badge, Card, CardGrid, SectionHeader } from '@storefront/widgets'
+
+import { FilterForm } from '../components/FilterForm'
+import { ToolButton } from '../components/ToolButton'
+
+const EMPTY_FILTERS = { query: '', category: '', status: '', min_price: '', max_price: '', sort: 'relevance' }
+
+export function CatalogPage({ snapshot }) {
+    const { products, categories } = snapshot
+
+    return (
+        <>
+            <FilterForm filters={{ ...EMPTY_FILTERS, ...snapshot.filters }} categories={categories} />
+            <SectionHeader title={pluralize(products.length, 'product')} />
+            {products.length === 0 ? (
+                <EmptyState>No products match these filters.</EmptyState>
+            ) : (
+                <CardGrid min={200}>
+                    {products.map((product) => (
+                        <Card
+                            key={product.id}
+                            image={product.image}
+                            title={product.name}
+                            eyebrow={product.category}
+                            price={`From ${formatMoney(product.price_from)}`}
+                            badges={<Badge tone={STOCK_STATUS_TONES[product.status]}>{STOCK_STATUS_LABELS[product.status]}</Badge>}
+                            actions={
+                                <ToolButton tool="get_product" args={{ product_id: product.id }}>
+                                    View options
+                                </ToolButton>
+                            }
+                        />
+                    ))}
+                </CardGrid>
+            )}
+        </>
+    )
+}

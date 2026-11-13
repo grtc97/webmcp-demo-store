@@ -1,0 +1,37 @@
+# --- Secrets & local env (never commit) ---
+.env
+.env.*
+!.env.example
+
+# --- Private project docs (never commit) ---
+documentation.md
+documentation.pdf
+
+# --- Node / build output ---
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# --- Logs & caches ---
+logs/
+*.log
+npm-debug.log*
+.cache/
+coverage/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*:Zone.Identifier
+
+# --- Editors & IDEs ---
+.idea/
+.vscode/
+*.swp
+*~
+
+# --- Local tooling ---
+.claude/
+.cursor/

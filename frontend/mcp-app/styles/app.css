@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+}
+.app {
+    padding: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.app-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.app-head h1 {
+    margin: 0;
+    font-size: 20px;
+}
+.app-note {
+    color: var(--mute);
+    font-size: 13px;
+    margin: 4px 0 12px;
+}
+.app-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+.app-msg {
+    margin: 8px 0;
+    font-size: 14px;
+}
+.app-msg.err {
+    color: var(--bad);
+}
+.app-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 16px;
+}
+.app-form label {
+    display: grid;
+    gap: 2px;
+    font-size: 12px;
+    color: var(--mute);
+}
+.app-form input,
+.app-form select {
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--btn-r);
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+}
+.app-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+.app-thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.app-thumbs button {
+    border: 2px solid transparent;
+    padding: 0;
+    width: 64px;
+    background: none;
+    cursor: pointer;
+}
+.app-thumbs button.on {
+    border-color: var(--brand);
+}
+.app-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 12px 0;
+}
+.app-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 12px 0;
+}
+.app-order {
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 12px;
+    margin-bottom: 12px;
+    background: var(--card);
+}
+.w-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

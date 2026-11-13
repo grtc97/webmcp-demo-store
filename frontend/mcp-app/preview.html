@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ShopChrem MCP App preview</title>
+        <style>
+            body {
+                font-family: system-ui, sans-serif;
+                margin: 0;
+                background: #ddd;
+            }
+            header {
+                padding: 10px 16px;
+                background: #222;
+                color: #fff;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+            }
+            iframe {
+                display: block;
+                width: 100%;
+                max-width: 900px;
+                margin: 16px auto;
+                border: 1px solid #999;
+                background: #fff;
+                min-height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            Host preview · simulate a chat request:
+            <select id="chat">
+                <option value="">Choose…</option>
+                <option value="products">Show products</option>
+                <option value="cart">Show my cart</option>
+                <option value="wishlist">Show my wishlist</option>
+                <option value="checkout">Open checkout</option>
+                <option value="orders">Show my orders</option>
+            </select>
+        </header>
+        <iframe id="app" src="/index.html" title="ShopChrem MCP App"></iframe>
+        <script type="module" src="/preview.js"></script>
+    </body>
+</html>

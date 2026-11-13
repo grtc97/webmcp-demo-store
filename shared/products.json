@@ -1,0 +1,836 @@
+[
+ {
+  "id": 1,
+  "name": "Wireless ANC Over-Ear Headphones",
+  "category": "Tech & Gadgets",
+  "description": "Over-ear Bluetooth headphones with 30-hour battery and active noise cancellation.",
+  "specs": {
+   "battery": "30 hours",
+   "connectivity": "Bluetooth 5.3",
+   "warranty": "1 year"
+  },
+  "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+  "variants": [
+   {
+    "id": 1,
+    "sku": "SC-001-1",
+    "label": "Black",
+    "price": 7499,
+    "quantity": 0
+   },
+   {
+    "id": 2,
+    "sku": "SC-001-2",
+    "label": "Silver",
+    "price": 7499,
+    "quantity": 0
+   },
+   {
+    "id": 3,
+    "sku": "SC-001-3",
+    "label": "Blue",
+    "price": 7999,
+    "quantity": 4
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "name": "Nova Smartphone 128GB",
+  "category": "Tech & Gadgets",
+  "description": "6.5-inch AMOLED display, 50MP camera and all-day battery.",
+  "specs": {
+   "display": "6.5\" AMOLED",
+   "storage": "128 GB",
+   "warranty": "1 year"
+  },
+  "image": "https://images.unsplash.com/photo-1592890288564-76628a30a657",
+  "variants": [
+   {
+    "id": 4,
+    "sku": "SC-002-1",
+    "label": "Midnight",
+    "price": 17999,
+    "quantity": 15
+   },
+   {
+    "id": 5,
+    "sku": "SC-002-2",
+    "label": "Ocean Blue",
+    "price": 17999,
+    "quantity": 4
+   },
+   {
+    "id": 6,
+    "sku": "SC-002-3",
+    "label": "Sunset Gold",
+    "price": 18499,
+    "quantity": 2
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "name": "Smartwatch Activity Tracker",
+  "category": "Tech & Gadgets",
+  "description": "Heart-rate, sleep and step tracking with a 7-day battery.",
+  "specs": {
+   "battery": "7 days",
+   "water_resistance": "5 ATM"
+  },
+  "image": "https://images.unsplash.com/photo-1576243345690-4e4b79b63288",
+  "variants": [
+   {
+    "id": 7,
+    "sku": "SC-003-1",
+    "label": "Black strap",
+    "price": 3299,
+    "quantity": 23
+   },
+   {
+    "id": 8,
+    "sku": "SC-003-2",
+    "label": "Green strap",
+    "price": 3299,
+    "quantity": 12
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "name": "Pocket Bluetooth Speaker",
+  "category": "Tech & Gadgets",
+  "description": "Waterproof pocket speaker with 12 hours of playtime.",
+  "specs": {
+   "battery": "12 hours",
+   "water_resistance": "IPX7"
+  },
+  "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1",
+  "variants": [
+   {
+    "id": 9,
+    "sku": "SC-004-1",
+    "label": "Black",
+    "price": 2199,
+    "quantity": 28
+   },
+   {
+    "id": 10,
+    "sku": "SC-004-2",
+    "label": "Red",
+    "price": 2199,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "name": "Notebook Laptop 15.6-inch",
+  "category": "Tech & Gadgets",
+  "description": "Everyday laptop for work and study, with a fast SSD.",
+  "specs": {
+   "ram": "16 GB",
+   "storage": "512 GB SSD",
+   "warranty": "1 year"
+  },
+  "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+  "variants": [
+   {
+    "id": 11,
+    "sku": "SC-005-1",
+    "label": "Silver",
+    "price": 49999,
+    "quantity": 9
+   },
+   {
+    "id": 12,
+    "sku": "SC-005-2",
+    "label": "Space Grey",
+    "price": 51999,
+    "quantity": 3
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "name": "Fast-Charge Power Bank 20000mAh",
+  "category": "Tech & Gadgets",
+  "description": "Fast-charging power bank with two USB ports and USB-C.",
+  "specs": {
+   "capacity": "20000 mAh",
+   "output": "22.5 W"
+  },
+  "image": "https://images.unsplash.com/photo-1760708825913-65a50b3dc39b",
+  "variants": [
+   {
+    "id": 13,
+    "sku": "SC-006-1",
+    "label": "Black",
+    "price": 1699,
+    "quantity": 58
+   },
+   {
+    "id": 14,
+    "sku": "SC-006-2",
+    "label": "White",
+    "price": 1699,
+    "quantity": 37
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "name": "Everyday Cotton Tee",
+  "category": "Apparel",
+  "description": "Soft everyday crew-neck tee in 100% combed cotton.",
+  "specs": {
+   "fabric": "100% cotton",
+   "fit": "Regular"
+  },
+  "image": "https://images.unsplash.com/photo-1778671394516-8270eac13c42",
+  "variants": [
+   {
+    "id": 15,
+    "sku": "SC-007-1",
+    "label": "S",
+    "price": 549,
+    "quantity": 38
+   },
+   {
+    "id": 16,
+    "sku": "SC-007-2",
+    "label": "M",
+    "price": 549,
+    "quantity": 58
+   },
+   {
+    "id": 17,
+    "sku": "SC-007-3",
+    "label": "L",
+    "price": 549,
+    "quantity": 16
+   },
+   {
+    "id": 18,
+    "sku": "SC-007-4",
+    "label": "XL",
+    "price": 549,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "name": "Slim Stretch Denim Jeans",
+  "category": "Apparel",
+  "description": "Stretch denim jeans with a comfortable mid-rise fit.",
+  "specs": {
+   "fabric": "Cotton stretch denim",
+   "fit": "Slim"
+  },
+  "image": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab",
+  "variants": [
+   {
+    "id": 19,
+    "sku": "SC-008-1",
+    "label": "30",
+    "price": 1699,
+    "quantity": 17
+   },
+   {
+    "id": 20,
+    "sku": "SC-008-2",
+    "label": "32",
+    "price": 1699,
+    "quantity": 18
+   },
+   {
+    "id": 21,
+    "sku": "SC-008-3",
+    "label": "34",
+    "price": 1699,
+    "quantity": 5
+   },
+   {
+    "id": 22,
+    "sku": "SC-008-4",
+    "label": "36",
+    "price": 1699,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "name": "Daily Running Sneakers",
+  "category": "Apparel",
+  "description": "Lightweight cushioned trainers for daily runs.",
+  "specs": {
+   "upper": "Breathable mesh",
+   "sole": "EVA foam"
+  },
+  "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+  "variants": [
+   {
+    "id": 23,
+    "sku": "SC-009-1",
+    "label": "UK 7",
+    "price": 2799,
+    "quantity": 13
+   },
+   {
+    "id": 24,
+    "sku": "SC-009-2",
+    "label": "UK 8",
+    "price": 2799,
+    "quantity": 13
+   },
+   {
+    "id": 25,
+    "sku": "SC-009-3",
+    "label": "UK 9",
+    "price": 2799,
+    "quantity": 9
+   },
+   {
+    "id": 26,
+    "sku": "SC-009-4",
+    "label": "UK 10",
+    "price": 2799,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "name": "Genuine Leather Bifold Wallet",
+  "category": "Apparel",
+  "description": "Slim genuine-leather wallet with card slots and coin pocket.",
+  "specs": {
+   "material": "Genuine leather"
+  },
+  "image": "https://images.unsplash.com/photo-1775379557015-938546264440",
+  "variants": [
+   {
+    "id": 27,
+    "sku": "SC-010-1",
+    "label": "Brown",
+    "price": 849,
+    "quantity": 33
+   },
+   {
+    "id": 28,
+    "sku": "SC-010-2",
+    "label": "Black",
+    "price": 849,
+    "quantity": 25
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "name": "Daypack 25L",
+  "category": "Apparel",
+  "description": "Water-resistant backpack with padded laptop compartment.",
+  "specs": {
+   "capacity": "25 litres"
+  },
+  "image": "https://images.unsplash.com/photo-1622560480654-d96214fdc887",
+  "variants": [
+   {
+    "id": 29,
+    "sku": "SC-011-1",
+    "label": "Navy",
+    "price": 1399,
+    "quantity": 26
+   },
+   {
+    "id": 30,
+    "sku": "SC-011-2",
+    "label": "Grey",
+    "price": 1399,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "name": "Stainless Electric Kettle 1.5L",
+  "category": "Home & Living",
+  "description": "Stainless steel kettle with auto shut-off.",
+  "specs": {
+   "capacity": "1.5 L",
+   "power": "1500 W"
+  },
+  "image": "https://images.unsplash.com/photo-1594213114663-d94db9b17125",
+  "variants": [
+   {
+    "id": 31,
+    "sku": "SC-012-1",
+    "label": "Silver",
+    "price": 999,
+    "quantity": 45
+   },
+   {
+    "id": 32,
+    "sku": "SC-012-2",
+    "label": "Black",
+    "price": 999,
+    "quantity": 6
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "name": "Cotton Bed Linen Set",
+  "category": "Home & Living",
+  "description": "Double bedsheet with two pillow covers, 144 thread count.",
+  "specs": {
+   "fabric": "100% cotton"
+  },
+  "image": "https://images.unsplash.com/photo-1601276174812-63280a55656e",
+  "variants": [
+   {
+    "id": 33,
+    "sku": "SC-013-1",
+    "label": "Blue stripes",
+    "price": 1199,
+    "quantity": 23
+   },
+   {
+    "id": 34,
+    "sku": "SC-013-2",
+    "label": "Floral",
+    "price": 1299,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "name": "LED Study Lamp",
+  "category": "Home & Living",
+  "description": "Dimmable desk lamp with three colour modes and USB charging.",
+  "specs": {
+   "power": "10 W"
+  },
+  "image": "https://images.unsplash.com/photo-1519219788971-8d9797e0928e",
+  "variants": [
+   {
+    "id": 35,
+    "sku": "SC-014-1",
+    "label": "White",
+    "price": 899,
+    "quantity": 4
+   },
+   {
+    "id": 36,
+    "sku": "SC-014-2",
+    "label": "Black",
+    "price": 899,
+    "quantity": 24
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "name": "Vitamin C Brightening Serum",
+  "category": "Personal Care",
+  "description": "Brightening daily serum with 10% Vitamin C.",
+  "specs": {
+   "size": "30 ml"
+  },
+  "image": "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c",
+  "variants": [
+   {
+    "id": 37,
+    "sku": "SC-015-1",
+    "label": "30 ml",
+    "price": 549,
+    "quantity": 47
+   },
+   {
+    "id": 38,
+    "sku": "SC-015-2",
+    "label": "50 ml",
+    "price": 799,
+    "quantity": 15
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "name": "Daily Sunscreen SPF 50",
+  "category": "Personal Care",
+  "description": "Lightweight, non-greasy broad-spectrum sunscreen.",
+  "specs": {
+   "spf": "50 PA+++"
+  },
+  "image": "https://images.unsplash.com/photo-1738721796993-5f42d9315689",
+  "variants": [
+   {
+    "id": 39,
+    "sku": "SC-016-1",
+    "label": "50 g",
+    "price": 399,
+    "quantity": 73
+   },
+   {
+    "id": 40,
+    "sku": "SC-016-2",
+    "label": "100 g",
+    "price": 699,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "name": "Quick-Dry Hair Dryer 2000W",
+  "category": "Personal Care",
+  "description": "Fast-drying hair dryer with cool-shot and two speeds.",
+  "specs": {
+   "power": "2000 W"
+  },
+  "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+  "variants": [
+   {
+    "id": 41,
+    "sku": "SC-017-1",
+    "label": "Black",
+    "price": 1199,
+    "quantity": 10
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "name": "Adjustable Dumbbell Pair Set",
+  "category": "Sports & Outdoors",
+  "description": "Pair of adjustable dumbbells, 2 to 10 kg each.",
+  "specs": {
+   "weight": "2-10 kg each"
+  },
+  "image": "https://images.unsplash.com/photo-1775993699105-4d18bcac7e54",
+  "variants": [
+   {
+    "id": 42,
+    "sku": "SC-018-1",
+    "label": "10 kg pair",
+    "price": 3299,
+    "quantity": 10
+   },
+   {
+    "id": 43,
+    "sku": "SC-018-2",
+    "label": "20 kg pair",
+    "price": 5499,
+    "quantity": 3
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "name": "Insulated Steel Flask",
+  "category": "Sports & Outdoors",
+  "description": "Keeps drinks cold for 24 hours and hot for 12.",
+  "specs": {
+   "material": "Stainless steel"
+  },
+  "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8",
+  "variants": [
+   {
+    "id": 44,
+    "sku": "SC-019-1",
+    "label": "500 ml",
+    "price": 749,
+    "quantity": 48
+   },
+   {
+    "id": 45,
+    "sku": "SC-019-2",
+    "label": "1 L",
+    "price": 999,
+    "quantity": 22
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "name": "Better Habits Handbook (Paperback)",
+  "category": "Reading",
+  "description": "Practical guide to building routines that stick.",
+  "specs": {
+   "format": "Paperback",
+   "pages": "288"
+  },
+  "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e",
+  "variants": [
+   {
+    "id": 46,
+    "sku": "SC-020-1",
+    "label": "Paperback",
+    "price": 349,
+    "quantity": 43
+   },
+   {
+    "id": 47,
+    "sku": "SC-020-2",
+    "label": "Hardcover",
+    "price": 649,
+    "quantity": 9
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "name": "Starter Kitchen Cookbook",
+  "category": "Reading",
+  "description": "100 easy recipes with photos for first-time cooks.",
+  "specs": {
+   "format": "Paperback",
+   "pages": "240"
+  },
+  "image": "https://images.unsplash.com/photo-1758279745466-f5f4087a87d6",
+  "variants": [
+   {
+    "id": 48,
+    "sku": "SC-021-1",
+    "label": "Paperback",
+    "price": 449,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "name": "Creative Blocks Set 500 pcs",
+  "category": "Toys & Play",
+  "description": "Colourful creative building set for ages 6 and up.",
+  "specs": {
+   "pieces": "500",
+   "age": "6+"
+  },
+  "image": "https://images.unsplash.com/photo-1784392088142-6c9af385eb98",
+  "variants": [
+   {
+    "id": 49,
+    "sku": "SC-022-1",
+    "label": "500 pcs",
+    "price": 1199,
+    "quantity": 16
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "name": "Family Strategy Board Game",
+  "category": "Toys & Play",
+  "description": "Family board game for 2 to 6 players, 45 minutes.",
+  "specs": {
+   "players": "2-6",
+   "age": "8+"
+  },
+  "image": "https://images.unsplash.com/photo-1763875067516-e947790c74ac",
+  "variants": [
+   {
+    "id": 50,
+    "sku": "SC-023-1",
+    "label": "Standard",
+    "price": 1399,
+    "quantity": 12
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "name": "Salted Roasted Almonds",
+  "category": "Pantry Foods",
+  "description": "Lightly salted roasted almonds, resealable pouch.",
+  "specs": {
+   "type": "Roasted, salted"
+  },
+  "image": "https://images.unsplash.com/photo-1772986800050-5b1f24d1760a",
+  "variants": [
+   {
+    "id": 51,
+    "sku": "SC-024-1",
+    "label": "250 g",
+    "price": 279,
+    "quantity": 58
+   },
+   {
+    "id": 52,
+    "sku": "SC-024-2",
+    "label": "500 g",
+    "price": 499,
+    "quantity": 5
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "name": "Hardcover Ruled Notebook A5",
+  "category": "Office & Stationery",
+  "description": "A5 hardcover notebook with 192 ruled pages, a ribbon bookmark and an elastic closure.",
+  "specs": {
+   "size": "A5",
+   "pages": "192 ruled",
+   "paper": "80 gsm"
+  },
+  "image": "https://images.unsplash.com/photo-1591195852468-03a01d1375d6",
+  "variants": [
+   {
+    "id": 53,
+    "sku": "SC-025-1",
+    "label": "Black",
+    "price": 299,
+    "quantity": 40
+   },
+   {
+    "id": 54,
+    "sku": "SC-025-2",
+    "label": "Navy",
+    "price": 299,
+    "quantity": 4
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "name": "Gel Pen Set 12 Colours",
+  "category": "Office & Stationery",
+  "description": "Smooth-writing 0.5 mm gel pens in 12 colours, quick drying and smudge resistant.",
+  "specs": {
+   "tip": "0.5 mm",
+   "ink": "Gel, quick drying"
+  },
+  "image": "https://images.unsplash.com/photo-1522363890879-4bf9c65ee3f8",
+  "variants": [
+   {
+    "id": 55,
+    "sku": "SC-026-1",
+    "label": "12 pens",
+    "price": 199,
+    "quantity": 55
+   },
+   {
+    "id": 56,
+    "sku": "SC-026-2",
+    "label": "24 pens",
+    "price": 349,
+    "quantity": 0
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "name": "Wooden Pen and Pencil Holder",
+  "category": "Office & Stationery",
+  "description": "Solid wood desk holder with three compartments for pens, pencils and sticky notes.",
+  "specs": {
+   "material": "Solid wood",
+   "compartments": "3"
+  },
+  "image": "https://images.unsplash.com/photo-1751107756601-66fa542b0e3c",
+  "variants": [
+   {
+    "id": 57,
+    "sku": "SC-027-1",
+    "label": "Natural",
+    "price": 449,
+    "quantity": 17
+   },
+   {
+    "id": 58,
+    "sku": "SC-027-2",
+    "label": "Walnut",
+    "price": 499,
+    "quantity": 2
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "name": "Pulse 3 Smartwatch with AMOLED Screen",
+  "category": "Tech & Gadgets",
+  "description": "1.43-inch AMOLED smartwatch with heart-rate, SpO2 and sleep tracking, built-in GPS and a 10-day battery. Water resistant to 5 ATM.",
+  "specs": {
+   "display": "1.43\" AMOLED",
+   "battery": "Up to 10 days",
+   "sensors": "Heart rate, SpO2, accelerometer",
+   "gps": "Built-in",
+   "water_resistance": "5 ATM",
+   "connectivity": "Bluetooth 5.3",
+   "compatibility": "Android 8+ and iOS 14+",
+   "warranty": "1-year"
+  },
+  "faq": [
+   {
+    "question": "Does it work with an iPhone?",
+    "answer": "Yes. It pairs over Bluetooth 5.3 with iPhones on iOS 14 or later and Android phones on Android 8 or later."
+   },
+   {
+    "question": "How long does the battery last?",
+    "answer": "Up to 10 days on a charge. Actual battery life varies with usage, such as how often GPS is on."
+   },
+   {
+    "question": "Can I wear it while swimming?",
+    "answer": "It is rated 5 ATM, so it handles rain, splashes and swimming in shallow water. It is not meant for diving or high-speed water sports."
+   },
+   {
+    "question": "Do I need to carry my phone for GPS?",
+    "answer": "No. The watch has built-in GPS, so it can track outdoor routes without your phone."
+   },
+   {
+    "question": "What health data does it track?",
+    "answer": "Heart rate, blood oxygen (SpO2) and sleep, plus activity through its accelerometer."
+   }
+  ],
+  "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a",
+  "variants": [
+   {
+    "id": 59,
+    "sku": "SC-028-1",
+    "label": "Black strap",
+    "price": 4799,
+    "quantity": 21
+   },
+   {
+    "id": 60,
+    "sku": "SC-028-2",
+    "label": "Blue strap",
+    "price": 4799,
+    "quantity": 7
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "name": "Smart Watch Ultra Max Plus",
+  "category": "Tech & Gadgets",
+  "description": "Best smart watch ever! Amazing display, super long battery, tracks everything. Perfect gift. 100% waterproof.",
+  "specs": {
+   "battery": "Long lasting",
+   "display": "HD",
+   "features": "All features"
+  },
+  "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a",
+  "variants": [
+   {
+    "id": 61,
+    "sku": "SC-029-1",
+    "label": "Black strap",
+    "price": 4799,
+    "quantity": 21
+   },
+   {
+    "id": 62,
+    "sku": "SC-029-2",
+    "label": "Blue strap",
+    "price": 4799,
+    "quantity": 7
+   }
+  ]
+ }
+]

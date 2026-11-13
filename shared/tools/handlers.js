@@ -1,0 +1,19 @@
+// Transport-independent commerce operations, backed by the store rules.
+// UI navigation and response formatting stay in the adapters
+// (src/webmcp/webTools.js for the website, mcp-server/actions.js for MCP).
+export function createToolHandlers(store) {
+    return {
+        search_products: (filters) => store.search(filters),
+        get_product: ({ product_id }) => store.getProduct(product_id),
+        check_availability: ({ variant_id }) => store.getVariant(variant_id),
+        get_wishlist: () => store.getWishlist(),
+        add_to_wishlist: ({ variant_id }) => store.addToWishlist(variant_id),
+        remove_from_wishlist: ({ variant_id }) => store.removeFromWishlist(variant_id),
+        get_cart: () => store.getCart(),
+        add_to_cart: ({ variant_id, quantity }) => store.addToCart(variant_id, quantity),
+        set_cart_quantity: ({ variant_id, quantity }) => store.setCartQuantity(variant_id, quantity),
+        remove_from_cart: ({ variant_id }) => store.removeFromCart(variant_id),
+        place_order: (customer) => store.placeOrder(customer),
+        get_orders: () => store.getOrders(),
+    }
+}
